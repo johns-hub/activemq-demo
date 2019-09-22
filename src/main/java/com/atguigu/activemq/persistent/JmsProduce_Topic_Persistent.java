@@ -7,7 +7,8 @@ import javax.jms.*;
 public class JmsProduce_Topic_Persistent {
 
     public static final String BROKER_URL = "tcp://192.168.1.204:61616";
-    public static final String TOPIC_NAME = "topic.persistent";
+    // public static final String TOPIC_NAME = "topic.persistent";
+    public static final String TOPIC_NAME = "topic.persistent.jdbc";
 
 
     public static void main(String[] args) throws JMSException {
@@ -33,7 +34,8 @@ public class JmsProduce_Topic_Persistent {
         // 6.通过使用消息生产者，发送3条消息到MQ的队列中
         for (int i = 1; i <= 3; i++) {
             // 7.创建消息
-            TextMessage message = session.createTextMessage("topic-persistent-msg-" + i);
+            // TextMessage message = session.createTextMessage("topic-persistent-msg-" + i);
+            TextMessage message = session.createTextMessage("topic-persistent-jdbc-msg-" + i);
 
             // 8.通过消息生产者，发送给MQ
             producer.send(message);

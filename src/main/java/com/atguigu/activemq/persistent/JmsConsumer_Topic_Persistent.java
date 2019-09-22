@@ -9,7 +9,8 @@
     public class JmsConsumer_Topic_Persistent {
 
         public static final String BROKER_URL = "tcp://192.168.1.204:61616";
-        public static final String TOPIC_NAME = "topic.persistent";
+        // public static final String TOPIC_NAME = "topic.persistent";
+        public static final String TOPIC_NAME = "topic.persistent.jdbc";
 
 
         public static void main(String[] args) throws JMSException, IOException {

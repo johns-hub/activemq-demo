@@ -8,7 +8,8 @@
     public class JmsConsumer {
 
         public static final String BROKER_URL = "tcp://192.168.1.204:61616";
-        public static final String QUEUE_NAME = "queue.persistent";
+        // public static final String QUEUE_NAME = "queue.persistent";
+        public static final String QUEUE_NAME = "queue.persistent.jdbc";
 
 
         public static void main(String[] args) throws JMSException, IOException {

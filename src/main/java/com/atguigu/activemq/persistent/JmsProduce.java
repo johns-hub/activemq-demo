@@ -7,7 +7,8 @@ import javax.jms.*;
 public class JmsProduce {
 
     public static final String BROKER_URL = "tcp://192.168.1.204:61616";
-    public static final String QUEUE_NAME = "queue.persistent";
+    // public static final String QUEUE_NAME = "queue.persistent";
+    public static final String QUEUE_NAME = "queue.persistent.jdbc";
 
 
     public static void main(String[] args) throws JMSException {
@@ -28,13 +29,14 @@ public class JmsProduce {
         // 5.创建消息的生产者
         MessageProducer messageProducer = session.createProducer(queue);
         // messageProducer.setDeliveryMode(DeliveryMode.NON_PERSISTENT); // 非持久化
-        // messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT); // 持久化消息
+        messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT); // 持久化消息
 
         // 6.通过使用消息生产者，发送3条消息到MQ的队列中
         for (int i = 1; i <= 3; i++) {
             // 7.创建消息
             // TextMessage message = session.createTextMessage("queue-not-persistent-msg-" + i);
-            TextMessage message = session.createTextMessage("queue-persistent-msg-" + i);
+            // TextMessage message = session.createTextMessage("queue-persistent-msg-" + i);
+            TextMessage message = session.createTextMessage("queue-persistent-jdbc-msg-" + i);
 
             // 8.通过消息生产者，发送给MQ
             messageProducer.send(message);
