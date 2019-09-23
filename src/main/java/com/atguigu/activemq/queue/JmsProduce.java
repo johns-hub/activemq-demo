@@ -6,8 +6,7 @@ import javax.jms.*;
 
 public class JmsProduce {
 
-    // public static final String BROKER_URL = "tcp://192.168.1.204:61616";
-    public static final String BROKER_URL = "tcp://192.168.1.101:61616";
+    public static final String BROKER_URL = "tcp://192.168.1.204:61616";
     public static final String QUEUE_NAME = "queue";
 
 
